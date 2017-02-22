@@ -524,10 +524,11 @@
 // delta speeds must be the same on xyz
 #define XYZ_STEPS (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
 
-// Have to define my own pulley, since it's not the same as the others.
-#define XYZ_PULLEY_TEETH_2 24
-#define XYZ_STEPS_WIERD_PULLEY (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH_2))
-
+/* THIS IS NO LONGER USED
+  // Have to define my own pulley, since it's not the same as the others.
+  #define XYZ_PULLEY_TEETH_2 24
+  #define XYZ_STEPS_WIERD_PULLEY (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH_2))
+*/
 /**
  * Default Settings
  *
@@ -544,7 +545,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { XYZ_STEPS_WIERD_PULLEY, XYZ_STEPS, XYZ_STEPS, 760.8 }   // default steps per unit for PowerWasp
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 760.8 }   // default steps per unit for PowerWasp
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -968,7 +969,7 @@
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 270.4 // Distance between the nozzle to printbed after homing
+#define MANUAL_Z_HOME_POS 270.1 // Distance between the nozzle to printbed after homing
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
